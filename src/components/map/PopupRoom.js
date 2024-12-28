@@ -2,8 +2,9 @@ import { Box, Card, ImageListItem, ImageListItemBar } from '@mui/material';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay, Lazy } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/pagination'; // Keep pagination styles
+import 'swiper/swiper-bundle.min.css'
+import 'swiper/swiper.min.css'
+// import 'swiper/components/pagination'; // Keep pagination styles
 // Removed the import for lazy CSS as it's now included automatically
 import { useValue } from '../../context/ContextProvider';
 

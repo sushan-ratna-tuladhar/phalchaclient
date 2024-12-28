@@ -19,11 +19,13 @@ import { Close, StarBorder } from '@mui/icons-material';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay, EffectCoverflow, Lazy, Zoom } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/lazy';
-import 'swiper/css/zoom';
+import 'swiper/swiper-bundle.min.css'
+import 'swiper/swiper.min.css'
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import 'swiper/css/effect-coverflow';
+// import 'swiper/css/lazy';
+// import 'swiper/css/zoom';
 import './swiper.css';
 
 const Transition = forwardRef((props, ref) => {
