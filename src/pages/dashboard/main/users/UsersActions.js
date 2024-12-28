@@ -2,8 +2,8 @@ import { Box, CircularProgress, Fab } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { Check, Save } from '@mui/icons-material';
 import { green } from '@mui/material/colors';
-import { getUsers, updateStatus } from '../../../actions/user';
-import { useValue } from '../../../context/ContextProvider';
+import { getUsers, updateStatus } from '../../../../actions/user';
+import { useValue } from '../../../../context/ContextProvider';
 
 const UsersActions = ({ params, rowId, setRowId }) => {
   const {

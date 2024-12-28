@@ -8,7 +8,7 @@ import {
   Rating,
   Tooltip,
 } from '@mui/material';
-import { useValue } from '../../context/ContextProvider';
+import { useValue } from '../../../context/ContextProvider';
 import { StarBorder } from '@mui/icons-material';
 
 const Rooms = () => {

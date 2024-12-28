@@ -3,6 +3,7 @@ import { Avatar, Badge, Box, IconButton, Tooltip } from '@mui/material';
 import React, { useState } from 'react';
 import { useValue } from '../../context/ContextProvider';
 import UserMenu from './UserMenu';
+import { useNavigate } from 'react-router-dom';
 
 const UserIcons = () => {
   const {
@@ -10,16 +11,17 @@ const UserIcons = () => {
   } = useValue();
 
   const [anchorUserMenu, setAnchorUserMenu] = useState(null);
+  const navigate = useNavigate();
 
   return (
     <Box>
       <IconButton size="large" color="inherit">
-        <Badge color="error" badgeContent={5}>
+        <Badge color="error" badgeContent={5} onClick={() => navigate('/dashboard/messages')}>
           <Mail />
         </Badge>
       </IconButton>
       <IconButton size="large" color="inherit">
-        <Badge color="error" badgeContent={20}>
+        <Badge color="error" badgeContent={20} onClick={() => navigate('/dashboard/requests')}>
           <Notifications />
         </Badge>
       </IconButton>

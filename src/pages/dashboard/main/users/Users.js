@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Avatar, Box, Typography } from '@mui/material';
 import { DataGrid, gridClasses } from '@mui/x-data-grid';
-import { useValue } from '../../../context/ContextProvider';
-import { getUsers } from '../../../actions/user';
+import { useValue } from '../../../../context/ContextProvider';
+import { getUsers } from '../../../../actions/user';
 import moment from 'moment';
 import { grey } from '@mui/material/colors';
 import UsersActions from './UsersActions';

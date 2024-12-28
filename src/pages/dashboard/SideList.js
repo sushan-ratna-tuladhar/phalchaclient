@@ -31,8 +31,8 @@ import Main from './main/Main';
 import Messages from './messages/Messages';
 import Requests from './requests/Requests';
 import Rooms from './rooms/Rooms';
-import Users from './users/Users';
-import useCheckToken from '../../hooks/useCheckToken';
+import Users from './main/users/Users';
+import useCheckToken from '../../hooks/useCheckTokens';
 import isAdmin from './utils/isAdmin';
 
 const drawerWidth = 240;
@@ -144,6 +144,13 @@ const SideList = ({ open, setOpen }) => {
 
   const navigate = useNavigate();
 
+  const handleNavigation = (link) => {
+    if (link === '') {
+      navigate('/dashboard'); // Always redirect "Main" to /dashboard
+    } else {
+      navigate(`/dashboard/${link}`); // Navigate to the dynamic path like /dashboard/users
+    }
+  };
   const handleLogout = () => {
     storeRoom(
       location,
@@ -174,7 +181,7 @@ const SideList = ({ open, setOpen }) => {
                   justifyContent: open ? 'initial' : 'center',
                   px: 2.5,
                 }}
-                onClick={() => navigate(item.link)}
+                onClick={() => handleNavigation(item.link)}
                 selected={selectedLink === item.link}
               >
                 <ListItemIcon

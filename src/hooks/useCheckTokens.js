@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useValue } from '../context/ContextProvider';
-import jwtDecode from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 import { storeRoom } from '../actions/room';
 import { logout } from '../actions/user';
 
