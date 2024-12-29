@@ -33,7 +33,7 @@ import Requests from './requests/Requests';
 import Rooms from './rooms/Rooms';
 import Users from './main/users/Users';
 import useCheckToken from '../../hooks/useCheckTokens';
-import isAdmin from './utils/isAdmin';
+import isAdmin from './utils/isadmin';
 
 const drawerWidth = 240;
 
