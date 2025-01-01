@@ -19,6 +19,7 @@ import { Close, StarBorder } from '@mui/icons-material';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay, EffectCoverflow, Lazy, Zoom } from 'swiper';
+import { createUserHistory } from '../../actions/userHistory';
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
 // import 'swiper/css';
@@ -34,7 +35,7 @@ const Transition = forwardRef((props, ref) => {
 
 const Room = () => {
   const {
-    state: { room },
+    state: { room, currentUser },
     dispatch,
   } = useValue();
 
@@ -42,12 +43,16 @@ const Room = () => {
 
   useEffect(() => {
     if (room) {
+      if(currentUser) {
+        //Add history for logged in user
+        createUserHistory(room, currentUser, dispatch);
+      }
       const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${room.lng},${room.lat}.json?access_token=${process.env.REACT_APP_MAP_TOKEN}`;
       fetch(url)
         .then((response) => response.json())
         .then((data) => setPlace(data.features[0]));
     }
-  }, [room]);
+  }, [room, currentUser, dispatch]);
 
   const handleClose = () => {
     dispatch({ type: 'UPDATE_ROOM', payload: null });
